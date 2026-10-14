@@ -1,0 +1,41 @@
+/* Sleuthbook: misma paleta que la app (shared/.../ui/Theme.kt), temas Día y Noche automáticos. */
+:root {
+  --bg: #F7F1E8; --surface: #FFFBF5; --surface2: #EFE6D8; --outline: #D8CBB8;
+  --text: #3B2F2A; --text2: #6B5D54; --primary: #9E4F57; --primary-soft: #F2D9D6; --on-primary-soft: #5E2A30;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1F1A22; --surface: #2A2330; --surface2: #352D3B; --outline: #4A4050;
+    --text: #F3EAE0; --text2: #C9BBB0; --primary: #E8A9AE; --primary-soft: #4A2F36; --on-primary-soft: #F6D7DA;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 17px/1.6 "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+h1, h2 { font-family: "Fraunces", Georgia, serif; line-height: 1.2; }
+h1 { font-size: 2.2rem; margin: 0 0 4px; }
+h2 { font-size: 1.35rem; margin: 32px 0 8px; }
+p, li { color: var(--text2); }
+strong { color: var(--text); }
+a { color: var(--primary); text-underline-offset: 3px; word-break: break-word; }
+a:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+.updated { font-size: .95rem; margin-top: 0; }
+.card { background: var(--surface); border: 1px solid var(--outline); border-radius: 20px; padding: 20px; margin: 16px 0; }
+.lang { display: flex; gap: 8px; justify-content: flex-end; margin-bottom: 16px; font-weight: 700; }
+.lang a, .pill {
+  display: inline-block; padding: 8px 16px; border-radius: 999px; text-decoration: none;
+  background: var(--primary-soft); color: var(--on-primary-soft);
+}
+.lang a[aria-current="page"] { background: var(--surface2); color: var(--text); }
+.table { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--outline); vertical-align: top; }
+th { color: var(--text); }
+td { color: var(--text2); }
+footer { margin-top: 48px; font-size: .9rem; color: var(--text2); }
+.tagline { font-size: 1.15rem; margin-top: 0; }
+.links { display: flex; flex-wrap: wrap; gap: 10px; }
